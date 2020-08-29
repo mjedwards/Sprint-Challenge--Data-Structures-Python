@@ -2,24 +2,31 @@ class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
         self.amg = []
-        # self.cur = -1
+        self.cur = 0
 
     def append(self, item):
-        # if len(self.amg) == self.capacity:
-        #     return self.amg
+        # if self.amg:
+        #     self.amg.append(item)
+        # if len(self.amg) == 0:
+        #     self.amg.append(item)
+
+        # elif len(self.amg) == self.capacity:
+        #     self.cur = 0
+        #     self.amg[self.cur] = item
+        #     self.cur = (self.cur) % self.capacity
+        
+        # elif len(self.amg)<self.capacity:
+        #     self.amg.append(item)
 
         # else:
-        #     self.cur = (self.cur + 1) % self.capacity
-        #     self.amg[self.cur] = self.amg.append(item)
-        if len(self.amg) == self.capacity:
-            return self.amg
-
-        else:
-            self.amg.append(item)
+        #     self.amg[self.cur]=item
+        #     self.cur=(self.cur)%self.capacity
             
-            
-
     def get(self):
         return self.amg
 
         
+
+print(RingBuffer(5).append(1))
+# print(RingBuffer(5).append(2))
+# print(RingBuffer(5).append(4))
